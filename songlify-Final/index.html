@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <title> Songlify App</title>
     <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+    
+    <script src="js/jquery-2.2.0.js"></script>
+        
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
+    </script>
 <!--    <script type="text/javascript" src="custom.js"></script>-->
     
 </head>
@@ -66,9 +72,11 @@
                 
                  <div class="current-song-wrapper">
     	              <img class="current-song-image">
+                     <div>
                       <p class="current-song-name"></p>
         	          <p class="current-song-album"></p>
                 </div>
+                </div>     
             </section>
 
             <!--Footer of the page-->
@@ -88,7 +96,7 @@
             </footer>
         </div>
     </div>
-    <script src="js/jquery-2.2.0.js"></script>
+    
           
           
 </body>
@@ -157,6 +165,7 @@
 	        
     	} 
        songTime();
+       $('#songs').DataTable();
        
     }
         
@@ -198,7 +207,10 @@
 		
 		$(id).on('click', onClick);
 	}
-        
+       
+        $('#songs').DataTable({
+        paging: false
+    });
         
         
          function fancyTimeFormat(time)
@@ -245,7 +257,7 @@
              });
 //        on click spacebar toggle
     $('body').on('keypress', function(event) {
-                if (event.keyCode == 32) {
+                if (event.keyCode == 32 && target.tagName !='INPUT') {
                 toggleSong();    
                 }
             });    

@@ -117,34 +117,31 @@ h1 {
     margin: 2rem auto;
 }
 
+.content {
+    position: relative;
+}
 .current-song-wrapper {
-     margin-top:  50px;
-    margin-left: 320px;
-		}
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    margin-bottom: -50px;
+}
 
-img {
-  width: 150px;
-  height: 100px;
-  border: 1px solid dimgray; 
-  padding: 0.5%;
-  border-radius: 10px;
-		}
+.current-song-image {
+    height: 100px;
+    width: 150px;
+    margin-right: 1rem;
+}
+.current-song-name {
+    font-size: 1.4rem;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
 
-.current-song-name{
-    font-size: 20px;
-    margin-left: 18px;
-    
+.current-song-album {
+    margin-top: 0.4rem;
 }
-.current-song-album{
-    margin-left: 30px;
-    
-}
-.controls{
-    display: inline-block;
-    margin-left: 200px;
-    margin-bottom: 250px;
-    
-}
+ 
 
 table{
     border: 1px solid white;
@@ -170,5 +167,20 @@ td:hover{background-color:dimgrey;}
 footer{
     margin-top: 130px;
     
+}
+table.dataTable tbody tr {
+    background-color: initial;
+}
+#songs_info {
+    display: none;
+}
+
+#songs_filter {
+    color: transparent;
+}
+#songs_filter input {
+    width: 400px;
+    margin-bottom: 1rem;
+    font-size: 16px;
 }
 
