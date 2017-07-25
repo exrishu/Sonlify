@@ -161,13 +161,14 @@
 	        song.find('.song-album').text(obj.album);
 	        song.find('.song-duration').text(obj.duration);
             addSongNameClickEvent(obj, i + 1);
-            
+             $('#songs').DataTable();
 	        
     	} 
        songTime();
-       $('#songs').DataTable();
+      
        
     }
+   
         
         //        Function for song toggle
     function toggleSong(){
@@ -208,9 +209,7 @@
 		$(id).on('click', onClick);
 	}
        
-        $('#songs').DataTable({
-        paging: false
-    });
+
         
         
          function fancyTimeFormat(time)
@@ -241,6 +240,8 @@
             $('.song-duration1').text(duration)
            ,1000});
         }
+        
+                
         
     
         function changeCurrentSongDetails(songObj) {
